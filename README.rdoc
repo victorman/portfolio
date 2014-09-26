@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Portfolio site application for personal public facing resume website.
 
-Things you may want to cover:
+=== Plan
+The immediate plan is to support the following:
+* Work History
+* Non professional history/accomplishments (club and organization leadership etc.)
+* education history (for me this is short but I think it should be included)
+In the future I hope to implement the following:
+* Projects database. compilation of all projects I'm currently and previously involved in.
+* Blog
+* Social activity. port data from other places like github, goodreads, linkedin, facebook, youtube, twitter etc.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
