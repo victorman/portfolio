@@ -1,5 +1,13 @@
 <h1>Listing jobs</h1>
 
+<div>
+	<ul>
+		<% Category.all.each do |category| %>
+		<li><%= link_to category.name, :controller => "jobs", :category_id => "#{category.id}" %></li>
+		<% end %>
+	</ul>
+</div>
+
 <table>
   <thead>
     <tr>
