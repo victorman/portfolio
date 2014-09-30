@@ -20,24 +20,20 @@
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
     <%= f.label :details %><br>
     <%= f.text_area :details %>
   </div>
   <div class="field">
-    <%= f.label :begin_date %><br>
-    <%= f.date_select :begin_date %>
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
   </div>
   <div class="field">
     <%= f.label :end_date %><br>
     <%= f.date_select :end_date %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.number_field :category %>
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

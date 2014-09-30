@@ -3,11 +3,10 @@ class CreateJobs < ActiveRecord::Migration
     create_table :jobs do |t|
       t.string :organization
       t.string :location
-      t.string :title
       t.text :details
-      t.date :begin_date
+      t.date :start_date
       t.date :end_date
-      t.integer :category
+      t.integer :category_id
 
       t.timestamps
     end

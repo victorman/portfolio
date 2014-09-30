@@ -5,9 +5,8 @@
     <tr>
       <th>Organization</th>
       <th>Location</th>
-      <th>Title</th>
       <th>Details</th>
-      <th>Begin date</th>
+      <th>Start date</th>
       <th>End date</th>
       <th>Category</th>
       <th></th>
@@ -21,11 +20,10 @@
       <tr>
         <td><%= job.organization %></td>
         <td><%= job.location %></td>
-        <td><%= job.title %></td>
         <td><%= job.details %></td>
-        <td><%= job.begin_date %></td>
+        <td><%= job.start_date %></td>
         <td><%= job.end_date %></td>
-        <td><%= job.category %></td>
+        <td><%= Category.find(job.category_id).name %></td>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>

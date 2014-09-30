@@ -11,18 +11,13 @@
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @job.title %>
-</p>
-
-<p>
   <strong>Details:</strong>
   <%= @job.details %>
 </p>
 
 <p>
-  <strong>Begin date:</strong>
-  <%= @job.begin_date %>
+  <strong>Start date:</strong>
+  <%= @job.start_date %>
 </p>
 
 <p>
@@ -32,7 +27,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @job.category %>
+  <%= Category.find(@job.category_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_job_path(@job) %> |

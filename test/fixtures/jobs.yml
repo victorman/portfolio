@@ -3,17 +3,15 @@
 one:
   organization: MyString
   location: MyString
-  title: MyString
   details: MyText
-  begin_date: 2014-09-25
-  end_date: 2014-09-25
-  category: 1
+  start_date: 2014-09-29
+  end_date: 2014-09-29
+  category_id: 1
 
 two:
   organization: MyString
   location: MyString
-  title: MyString
   details: MyText
-  begin_date: 2014-09-25
-  end_date: 2014-09-25
-  category: 1
+  start_date: 2014-09-29
+  end_date: 2014-09-29
+  category_id: 1
