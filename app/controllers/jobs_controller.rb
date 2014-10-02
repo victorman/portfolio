@@ -9,6 +9,15 @@ class JobsController < ApplicationController
     else
       @jobs = Job.find(:all, :conditions => {:category_id => params[:category_id]})
     end
+    
+    unless @jobs
+      @jobs = [];
+    end
+    
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /jobs/1

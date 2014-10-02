@@ -1,0 +1,3 @@
+var jobs = $("<%= escape_javascript(render(:partial => @jobs))%>").hide();
+$("#jobs_table").replaceWith(jobs);
+$("#jobs_table").fadeIn();

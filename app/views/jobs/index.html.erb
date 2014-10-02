@@ -3,7 +3,7 @@
 <div>
 	<ul>
 		<% Category.all.each do |category| %>
-		<li><%= link_to category.name, :controller => "jobs", :category_id => "#{category.id}" %></li>
+		<li><%= link_to category.name, { :controller => "jobs", :category_id => "#{category.id}" }, :class => "category_link", remote: true %></li>
 		<% end %>
 	</ul>
 </div>
@@ -22,7 +22,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="jobs_table">
     <% @jobs.each do |job| %>
       <tr>
         <td><%= job.organization %></td>
