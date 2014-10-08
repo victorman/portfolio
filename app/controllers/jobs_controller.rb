@@ -4,13 +4,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    unless params.has_key? :category_id
-      @jobs = Job.find(:all, :conditions => {:category_id => 1})
-    else
-      @jobs = Job.find(:all, :conditions => {:category_id => params[:category_id]})
-    end
-    
-    
+    @jobs = Job.where(category_id: params[:category_id] || 1)
     respond_to do |format|
       format.html
       format.js

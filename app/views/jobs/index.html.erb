@@ -1,12 +1,11 @@
 <h1>Listing jobs</h1>
 
-<div>
-	<ul>
-		<% Category.all.each do |category| %>
-		<li><%= link_to category.name, { :controller => "jobs", :category_id => "#{category.id}" }, :class => "category_link", remote: true %></li>
-		<% end %>
-	</ul>
-</div>
+<ul>
+	<% Category.all.each do |category| %>
+	<li><%= link_to category.name, category_jobs_path(category),
+				class: "category", remote: true %></li>
+	<% end %>
+</ul>
 
 <table>
   <thead>
@@ -22,7 +21,7 @@
     </tr>
   </thead>
 
-  <%= render :partial => @jobs %>
+    <tbody id="jobs"><%= render partial: @jobs %></tbody>
 </table>
 
 <br>
