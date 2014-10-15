@@ -3,7 +3,7 @@
 <ul>
 	<% Category.all.each do |category| %>
 	<li><%= link_to category.name, category_jobs_path(category),
-				class: "category", remote: true %></li>
+				class: "category", remote: true%></li>
 	<% end %>
 </ul>
 
@@ -21,7 +21,7 @@
     </tr>
   </thead>
 
-    <tbody id="jobs"><%= render partial: @jobs %></tbody>
+    <tbody id="jobs"><%= render partial: "jobs" %></tbody>
 </table>
 
 <br>

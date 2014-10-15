@@ -4,7 +4,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.where(category_id: params[:category_id] || 1)
+    @jobs = Job.where(category_id: params[:category_id])
     respond_to do |format|
       format.html
       format.js
