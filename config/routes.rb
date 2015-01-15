@@ -1,9 +1,13 @@
-TechPortfolio::Application.routes.draw do
+ TechPortfolio::Application.routes.draw do
 
-  resources :jobs
+  resources :sessions, :jobs
   resources :categories do
     resources :jobs
   end
+  
+  root 'jobs#index'
+  match 'login' => 'sessions#new', via: [:get, :post]
+  match 'logout' => 'sessions#destroy', via: [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

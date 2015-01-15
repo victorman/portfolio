@@ -30,5 +30,7 @@
   <%= Category.find(@job.category_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
+<% if admin? %>
+	<%= link_to 'Edit', edit_job_path(@job) %> |
+<% end %>
 <%= link_to 'Back', jobs_path %>
