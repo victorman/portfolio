@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
     session[:password] = params[:password]
     if admin?
       flash[:notice] = "Successfully logged in"
-      redirect_to(:controller => 'jobs', :action=>'index')
+      redirect_to controller: 'jobs', action: 'index'
     else
       flash[:notice] = "Not logged in"
       render :new
