@@ -5,7 +5,8 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.where(category_id: params[:category_id])
+    all_categories = Category.all
+    @jobs = Job.where(category_id: params[:category_id]||all_categories).order(:category_id)
     respond_to do |format|
       format.html
       format.js

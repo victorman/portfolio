@@ -2,6 +2,7 @@
 <h1>Listing jobs</h1>
 
 <ul>
+	<li><%=link_to "All", "/", remote: true%>
 	<% Category.all.each do |category| %>
 	<li><%= link_to category.name, category_jobs_path(category),
 				class: "category", remote: true %></li>
