@@ -12,3 +12,5 @@ In the future I hope to implement the following:
 * Blog
 * Social activity. port data from other places like github, goodreads, linkedin, facebook, youtube, twitter etc.
 
+===Versions
+* built using ruby ruby-2.1.2 and Rails 4.0.0
