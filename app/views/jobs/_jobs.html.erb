@@ -1,11 +1,14 @@
+
 <% @jobs.inject(-1) do |cat, job| %>
-<!-- When a job is encountered that has category that is different than the last, then print a title for the category -->
-  <% if job.category_id != cat %>
-  	<div>
-  		<h2><%= Category.find(job.category_id).name %></h2>
+<%# When a job is encountered that has category that is different than the last, then print a title for the category %>
+  <% unless job.category_id == cat %>
+    <% unless cat == -1 %>
 	</div>
+	<% end %>
+    <div class="category-list">
+  		<h2><%= Category.find(job.category_id).name %></h2>
   <% end %>
-  <div>
+  	<div>
 	  <article>
 		  <h3><%= link_to job.title, job %></h3>
 		  <ul>
@@ -16,16 +19,16 @@
 		  </ul>
 		  
 		  <p><span>Details</span> <%= job.details %></p>
-		  <ul>
-			  <li><%= link_to 'Show', job %></li>
-			  <% if admin? %>
+		  <% if admin? %>
+		  	<ul>
 				<li><%= link_to 'Edit', edit_job_path(job) %></li>
 				<li><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-			  <% end %>
 			</ul>
-		</article>
-  </div>
+		  <% end %>
+	  </article>
+  	</div>
   
-  <!-- the current category is returned to be cat in the next iteration -->
+  <%# the current category is returned to be cat in the next iteration %>
   <% job.category_id %>
 <% end %>
+	</div> <%# final category-list. this will not be matched if there are no jobs. but in that case there's no reason for anyone to view the page %>
