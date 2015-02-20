@@ -7,10 +7,11 @@ The immediate plan is to support the following:
 * Work History
 * Non professional history/accomplishments (club and organization leadership etc.)
 * education history (for me this is short but I think it should be included)
-In the future I hope to implement the following:
-* Projects database. compilation of all projects I'm currently and previously involved in.
-* Blog
-* Social activity. port data from other places like github, goodreads, linkedin, facebook, youtube, twitter etc.
+
+
+=== TODO list
+* Remove use of <table>s
+* 
 
 ===Versions
 * built using ruby ruby-2.1.2 and Rails 4.0.0

@@ -1,14 +1,18 @@
 <% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.organization %></td>
-    <td><%= job.location %></td>
-    <td><%= job.details %></td>
-    <td><%= job.start_date %></td>
-    <td><%= job.end_date %></td>
-    <td><%= link_to 'Show', job %></td>
-	<% if admin? %>
-    	<td><%= link_to 'Edit', edit_job_path(job) %></td>
-   	 	<td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	<% end %>
-  </tr>
+  <li>
+    <div>
+	<ul>
+    	<li><span>Organization</span> <%= job.organization %></li>
+    	<li><span>Location</span> <%= job.location %></li>
+    	<li><span>Details</span> <%= job.details %></li>
+    	<li><span>Start date</span> <%= job.start_date %></li>
+    	<li><span>End date</span> <%= job.end_date %></li>
+    	<li><%= link_to 'Show', job %></li>
+		<% if admin? %>
+    		<li><%= link_to 'Edit', edit_job_path(job) %></li>
+   	 		<li><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+		<% end %>
+	</ul>
+	</div>
+  </li>
 <% end %>
