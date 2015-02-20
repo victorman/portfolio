@@ -1,6 +1,6 @@
 == README
 
-Portfolio site application for personal public facing resume website.
+Portfolio web application for personal public facing resume website. Though for now it is a project for my personal use I hope to expand into something that others can take and implement on their own web sites. Therefore it must be highly customizable.
 
 === Plan
 The immediate plan is to support the following:
@@ -10,8 +10,9 @@ The immediate plan is to support the following:
 
 
 === TODO list
-* Remove use of <table>s
-* 
+* make stylesheets costomizable
+* add other User data. Name, bio, picture, mission statement, etc
+
 
 ===Versions
 * built using ruby ruby-2.1.2 and Rails 4.0.0
