@@ -1,22 +1,29 @@
-<% @jobs.each do |job| %>
+<% @jobs.inject(0) do |cat, job| %>
+<!-- When a job is encountered that has category that is different than the last, then print a title for the category -->
+  <% if job.category_id != cat %>
+  	<div>
+  		<h2><%= Category.find(job.category_id).name %></h2>
+	</div>
+  <% end %>
   <div>
-  <article>
-	  <h2><%= job.title %></h2>
-	<ul>
-    	<li><span>Organization</span> <%= job.organization %></li>
-    	<li><span>Location</span> <%= job.location %></li>
-    	<li><span>Start date</span> <%= job.start_date %></li>
-    	<li><span>End date</span> <%= job.end_date %></li>
-	</ul>
-
-	<div><span>Details</span> <%= job.details %></div>
-	<ul>
-    	<li><%= link_to 'Show', job %></li>
-		<% if admin? %>
-    		<li><%= link_to 'Edit', edit_job_path(job) %></li>
-   	 		<li><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-		<% end %>
-	</ul>
-  </article>
+	  <article>
+		  <h3><%= job.title %></h3>
+		  <ul>
+			  <li><span>Organization</span> <%= job.organization %></li>
+			  <li><span>Location</span> <%= job.location %></li>
+			  <li><span>Start date</span> <%= job.start_date %></li>
+			  <li><span>End date</span> <%= job.end_date %></li>
+		  </ul>
+		  
+		  <p><span>Details</span> <%= job.details %></p>
+		  <ul>
+			  <li><%= link_to 'Show', job %></li>
+			  <% if admin? %>
+				<li><%= link_to 'Edit', edit_job_path(job) %></li>
+				<li><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+			  <% end %>
+			</ul>
+		</article>
   </div>
+  <% job.category_id %>
 <% end %>
