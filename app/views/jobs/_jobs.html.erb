@@ -1,4 +1,4 @@
-<% @jobs.inject(0) do |cat, job| %>
+<% @jobs.inject(-1) do |cat, job| %>
 <!-- When a job is encountered that has category that is different than the last, then print a title for the category -->
   <% if job.category_id != cat %>
   	<div>
@@ -7,7 +7,7 @@
   <% end %>
   <div>
 	  <article>
-		  <h3><%= job.title %></h3>
+		  <h3><%= link_to job.title, job %></h3>
 		  <ul>
 			  <li><span>Organization</span> <%= job.organization %></li>
 			  <li><span>Location</span> <%= job.location %></li>
@@ -25,5 +25,7 @@
 			</ul>
 		</article>
   </div>
+  
+  <!-- the current category is returned to be cat in the next iteration -->
   <% job.category_id %>
 <% end %>

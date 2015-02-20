@@ -2,34 +2,28 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$bgcolor: #fff;
-
-
-#navigation {
-	li { display: inline; }
-}
-
-body {
-	background-color: lightgray;
-}
+//$bgcolor: #fff;
 
 #jobs {
 	div {
 		article {
-			background-color: $bgcolor;
-			border-bottom: solid 3px $bgcolor;
-			&:hover {
-				border-bottom: double 3px;
-			}
+//			background-color: $bgcolor;
+//			border-bottom: solid 3px $bgcolor;
+//			&:hover {
+//				border-bottom: double 3px;
+//			}
 			
 			li {
 				display: inline;
-				span { display: none; }
 			}
+
+			span { display: none; }
 		}
 	}
 }
 
 #categories {
-	li { display: inline; }
+	li {
+		display: inline;
+	}
 }
