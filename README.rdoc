@@ -13,6 +13,8 @@ The immediate plan is to support the following:
 === TODO list
 * make stylesheets costomizable
 * add other User data. Name, bio, picture, mission statement, etc
+* export to pdf
+
 
 
 ===Versions
