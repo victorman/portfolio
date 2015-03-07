@@ -1,34 +1,43 @@
 
 <% @jobs.inject(-1) do |cat, job| %>
 <%# When a job is encountered that has category that is different than the last, then print a title for the category %>
-  <% unless job.category_id == cat %>
-    <% unless cat == -1 %>
-	</div>
+  <% if job.category_id != cat %>
+    <% if cat != -1 %>
+		</div> <%# close the list group %>
+	</div> <%# close the panel. of course do not start with an end tag %>
 	<% end %>
-    <div class="category-list">
-  		<h2><%= Category.find(job.category_id).name %></h2>
+	<% category_name = Category.find(job.category_id).name %>
+	<div id="<%= category_name %>" class="panel panel-default">
+  		<div class="panel-heading"><%= category_name %></div>
+    	<div class="category-list list-group">
   <% end %>
-  	<div>
-	  <article>
-		  <h3><%= link_to job.title, job %></h3>
-		  <ul>
-			  <li><span>Organization</span> <%= job.organization %></li>
-			  <li><span>Location</span> <%= job.location %></li>
-			  <li><span>Start date</span> <%= job.start_date %></li>
-			  <li><span>End date</span> <%= job.end_date %></li>
-		  </ul>
+  			<div class="list-group-item">
+		  	  <h4 class="list-group-item-heading"><%= link_to job.title, job %></h4>
+		  		<ul>
+			  		<li><span>Organization</span> <%= job.organization %></li>
+			  		<li><span>Location</span> <%= job.location %></li>
+			  		<li><span>Start date</span> <%= job.start_date %></li>
+			  	  	<li><span>End date</span> <%= job.end_date %></li>
+		  	  	</ul>
 		  
-		  <p><span>Details</span> <%= job.details %></p>
-		  <% if admin? %>
-		  	<ul>
-				<li><%= link_to 'Edit', edit_job_path(job) %></li>
-				<li><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-			</ul>
-		  <% end %>
-	  </article>
-  	</div>
+		  	  	<p><span>Details</span> <%= job.details %></p>
+		  	  	<% if admin? %>
+		  		<ul>
+					<li><%= link_to 'Edit', edit_job_path(job) %></li>
+					<li><%= link_to 'Destroy', job, method: :delete,
+						data: { confirm: 'Are you sure?' } %></li>
+				</ul>
+		  	  	<% end %>
+  			</div>
   
   <%# the current category is returned to be cat in the next iteration %>
   <% job.category_id %>
 <% end %>
-	</div> <%# final category-list. this will not be matched if there are no jobs. but in that case there's no reason for anyone to view the page %>
+		</div>
+	</div> <%# final category-list. this will not be matched if there are no jobs. but in that case there's no reason for anyone to view the resume %>
+
+<% if admin? %>
+<div>
+	<%= link_to 'New Job', new_job_path, class: 'btn btn-primary' %>
+</div>
+<% end %>

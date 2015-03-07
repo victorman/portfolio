@@ -1,31 +1,31 @@
 
-<h1>Listing jobs</h1>
-
-<div id="categories" class="container">
-	<div class="row">
-		<ul class"nav nav-tabs" role="tablist">
-			<li><%=link_to "All", "/", remote: true %>
+<div class="row">
+	<div class="col-xs-12">
+		<ul class="nav nav-pills">
+			<li role="presentation">
+				<%=link_to "All", "/", remote: true, 'data-toggle' => :tab %>
+			</li>
 			<% Category.all.each do |category| %>
-				<li><%= link_to category.name, category_jobs_path(category),
-					class: "category", remote: true %></li>
-					<% end %>
+			<li role="presentation">
+				<%= link_to category.name, category_jobs_path(category),
+				class: "category", remote: true,
+				'data-toggle' => :tab %>
+			</li>
+			<% end %>
 			<% if admin? %>
-				<li><%= link_to 'New Category', new_category_path %></li>
+			<li role="presentation">
+				<%= link_to new_category_path,
+				'data-toggle' => :tab do %>
+					<span class="glyphicon glyphicon-plus" aria-hidden="true" aria-label="New Category"></span> 
+				<% end %>
+			</li>
 			<% end %>
 		</ul>
 	</div>
 </div>
 
-<div id="jobs" class="container">
-	<div class="row">
-	  <%= render "jobs" %>
+	<div id="jobs" class="row">
+		<%= render "jobs" %>
   	</div>
-</div>
 
-<br>
 
-<% if admin? %>
-<div>
-	<p><%= link_to 'New Job', new_job_path %></p>
-</div>
-<% end %>
