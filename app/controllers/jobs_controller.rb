@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     all_categories = Category.all
-    @jobs = Job.where(category_id: params[:category_id]||all_categories).order(:category_id)
+    @jobs = Job.where(category_id: params[:category_id]||all_categories).order(:category_id, :id)
     
     #handle the user
     @user = User.first

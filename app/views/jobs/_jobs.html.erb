@@ -36,8 +36,3 @@
 		</div>
 	</div> <%# final category-list. this will not be matched if there are no jobs. but in that case there's no reason for anyone to view the resume %>
 
-<% if admin? %>
-<div>
-	<%= link_to 'New Job', new_job_path, class: 'btn btn-primary' %>
-</div>
-<% end %>

@@ -7,19 +7,19 @@
 		<ul class="nav nav-tabs nav-justified" role="tablist">
 			<li role="presentation" class="active">
 				<%=link_to "All", root_path, remote: true,
-				'data-toggle' => 'tab', role: :tab %>
+				role: :tab %>
 			</li>
 			<% Category.all.each do |category| %>
 			<li role="presentation">
 				<%= link_to category.name, category_jobs_path(category),
 				class: "category", remote: true,
-				'data-toggle' => 'tab', role: :tab %>
+				 role: :tab %>
 			</li>
 			<% end %>
 			<% if admin? %>
 			<li role="presentation">
 				<%= link_to new_category_path,
-				'data-toggle' => 'tab', role: :tab do %>
+				 role: :tab do %>
 					<span class="glyphicon glyphicon-plus" aria-hidden="true" aria-label="New Category"></span> 
 				<% end %>
 			</li>
@@ -31,11 +31,16 @@
 	<div id="jobs" class="row">
 		<%= render "jobs" %>
   	</div>
+	<% if admin? %>
+	<div>
+		<%= link_to 'New Job', new_job_path, class: 'btn btn-primary' %>
+	</div>
+	<% end %>
 
 
 <script>
 	$("[role='tab']").click(function(e) {
-		e.preventDefault();
+		//e.preventDefault();
 	    //e.stopPropagation();
 		$(".nav-tabs li").removeClass('active');
 		$(this).parent().addClass('active');
