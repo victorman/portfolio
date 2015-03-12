@@ -18,6 +18,7 @@ The immediate plan is to support the following:
 * add other User data: bio, picture, mission statement, etc
 * export to pdf
 * implement proper password security
+* add support for skills
 
 
 
