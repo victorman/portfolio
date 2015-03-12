@@ -11,9 +11,13 @@ The immediate plan is to support the following:
 
 
 === TODO list
+* Complete styling and aesthetics
+** text format
+* add option for ongoing or current job
 * make stylesheets costomizable
 * add other User data: bio, picture, mission statement, etc
 * export to pdf
+* implement proper password security
 
 
 

@@ -11,7 +11,8 @@ class JobsController < ApplicationController
     #handle the user
     @user = User.first
     if @user.nil? 
-      @user = User.new({:name => "Roy Batty",
+      @user = User.new({
+        :name => "Roy Batty",
         :title => "Nexus-6 - Combat Model",
         :location => "Mars"})
       @user.save
