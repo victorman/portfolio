@@ -11,8 +11,7 @@ The immediate plan is to support the following:
 
 
 === TODO list
-* Complete styling and aesthetics
-** text format
+* Complete styling and aesthetics esp. text formatting
 * add option for ongoing or current job
 * make stylesheets costomizable
 * add other User data: bio, picture, mission statement, etc
