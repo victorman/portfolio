@@ -7,6 +7,17 @@ class JobsController < ApplicationController
   def index
     all_categories = Category.all
     @jobs = Job.where(category_id: params[:category_id]||all_categories).order(:category_id)
+    
+    #handle the user
+    @user = User.first
+    if @user.nil? 
+      @user = User.new({:name => "Roy Batty",
+        :title => "Nexus-6 - Combat Model",
+        :location => "Mars"})
+      @user.save
+    end
+    
+    
     respond_to do |format|
       format.html
       format.js
