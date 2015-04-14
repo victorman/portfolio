@@ -2,6 +2,8 @@
 
 Portfolio web application for personal public facing resume website. Though for now it is a project for my personal use I hope to expand into something that others can take and implement on their own web sites. Therefore it must be highly customizable.
 
+here is a working demo: https://quiet-journey-8097.herokuapp.com/
+
 === Plan
 The immediate plan is to support the following:
 * Work History
